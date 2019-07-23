@@ -162,6 +162,19 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
+##### Notification Service on /etc/systemd/system/notify-mq@.service
+```
+[Unit]
+Description=Notif Service via mq
+
+[Service]
+Type=oneshot
+ExecStart=/home/core/bin/mq_publish_notif.sh %i failed
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ##### Sample Telegram Notification on /home/core/bin/mq_publish_notif.sh
 ```
 #!/bin/bash
