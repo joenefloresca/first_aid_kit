@@ -187,6 +187,23 @@ data='{"properties":{},"routing_key":"telegram-message","payload":"{\"chat_id\":
 /usr/bin/curl -i -u telegram:telegram -H "content-type:application/json" -d "$data" -XPOST http://fl-mq01:15672/api/exchanges/telegram/amq.default/publish
 ```
 
+### Dev Ops
+
+##### Port Forwarding In CoreOs
+```
+ssh -L 8983:fl-solr01:8983 -i joenersa joene@mydomain.com -p 22
+```
+
+##### Restarting Systemd Service
+```
+sudo systemctl start nodejs.service
+```
+
+##### Journalctl Logs Tail
+```
+sudo journalctl -u nodejs.service -f
+```
+
 ## Author
 
 * **Joene Floresca** - [Github](https://github.com/joenefloresca)
